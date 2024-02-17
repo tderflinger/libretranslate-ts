@@ -1,5 +1,5 @@
 {
-  "name": "libretranslate-js",
+  "name": "libretranslate-ts",
   "version": "0.5.10",
   "description": "TypeScript (and JavaScript) SDK for the LibreTranslate API.",
   "main": "dist/bundle.cjs.js",
@@ -7,12 +7,12 @@
   "types": "dist/app.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tderflinger/libretranslate-js.git"
+    "url": "git+https://github.com/tderflinger/libretranslate-ts.git"
   },
   "bugs": {
-    "url": "https://github.com/tderflinger/libretranslate-js/issues"
+    "url": "https://github.com/tderflinger/libretranslate-ts/issues"
   },
-  "homepage": "https://github.com/tderflinger/libretranslate-js",
+  "homepage": "https://github.com/tderflinger/libretranslate-ts",
   "scripts": {
     "build": "rollup -c",
     "start": "rollup -c -w",

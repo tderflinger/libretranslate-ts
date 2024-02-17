@@ -1,7 +1,7 @@
-# libretranslate-js
+# libretranslate-ts
 
-A simple and easy to use JavaScript library for [LibreTranslate](https://libretranslate.com/).
-Includes TypeScript bindings.
+A simple and easy to use TypeScript library for [LibreTranslate](https://libretranslate.com/).
+Can also be used with JavaScript.
 
 ## Installation
 
