@@ -28,7 +28,7 @@ const LIBRETRANSLATE_ENDPOINT = "http://localhost:5000";
 libreTranslate.setApiEndpoint(LIBRETRANSLATE_ENDPOINT);
 libreTranslate.setApiKey("");
 const resultDetect = await libreTranslate.detect("Hola, cómo estás?");
-console.log("Detected language", resultDetect);
+console.log("Detected language: ", resultDetect);
 const result = await libreTranslate.translate(
     "There is a tiger in the house nearby the barn.",
     "en",
@@ -36,8 +36,8 @@ const result = await libreTranslate.translate(
 );
 
 if (result?.status >= 400) {
-    console.log("Status", result?.status);
-    console.error("Error", result?.error);
+    console.log("Status: ", result?.status);
+    console.error("Error: ", result?.error);
     process.exit(1);
 }
 
