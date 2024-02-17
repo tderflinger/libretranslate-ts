@@ -14,3 +14,7 @@ npm -g ts-node
 ```bash
 ts-node src/app.ts
 ```
+
+## License
+
+MIT License

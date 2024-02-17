@@ -1,7 +1,8 @@
-interface Language {
+type Language = {
     code: string;
     name: string;
-}
+    targets: string[];
+};
 type DetectResponse = {
     status: number;
     language: string;
