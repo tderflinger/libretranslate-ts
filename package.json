@@ -1,10 +1,10 @@
 {
-  "name": "libretranslatejs",
-  "version": "0.5.0",
+  "name": "libretranslate-js",
+  "version": "0.5.10",
   "description": "TypeScript (and JavaScript) SDK for the LibreTranslate API.",
-  "main": "dist/bundle.js",
-  "type": "module",
-  "types": "dist/index.d.ts",
+  "main": "dist/bundle.cjs.js",
+  "module": "dist/bundle.js",
+  "types": "dist/app.d.ts",
   "scripts": {
     "build": "rollup -c",
     "start": "rollup -c -w",

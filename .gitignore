@@ -1,2 +1,4 @@
 node_modules/
 *.tsbuildinfo
+
+libretranslate*.tgz

@@ -1,15 +1,34 @@
-import require$$1, { TextEncoder } from 'util';
-import stream, { Readable } from 'stream';
-import require$$1$1 from 'path';
-import require$$3 from 'http';
-import require$$4 from 'https';
-import require$$0$1 from 'url';
-import require$$6 from 'fs';
-import require$$4$1 from 'assert';
-import require$$0$3 from 'tty';
-import require$$0$2 from 'os';
-import zlib from 'zlib';
-import EventEmitter from 'events';
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var require$$1 = require('util');
+var stream = require('stream');
+var require$$1$1 = require('path');
+var require$$3 = require('http');
+var require$$4 = require('https');
+var require$$0$1 = require('url');
+var require$$6 = require('fs');
+var require$$4$1 = require('assert');
+var require$$0$3 = require('tty');
+var require$$0$2 = require('os');
+var zlib = require('zlib');
+var EventEmitter = require('events');
+
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+var require$$1__default = /*#__PURE__*/_interopDefaultLegacy(require$$1);
+var stream__default = /*#__PURE__*/_interopDefaultLegacy(stream);
+var require$$1__default$1 = /*#__PURE__*/_interopDefaultLegacy(require$$1$1);
+var require$$3__default = /*#__PURE__*/_interopDefaultLegacy(require$$3);
+var require$$4__default = /*#__PURE__*/_interopDefaultLegacy(require$$4);
+var require$$0__default = /*#__PURE__*/_interopDefaultLegacy(require$$0$1);
+var require$$6__default = /*#__PURE__*/_interopDefaultLegacy(require$$6);
+var require$$4__default$1 = /*#__PURE__*/_interopDefaultLegacy(require$$4$1);
+var require$$0__default$2 = /*#__PURE__*/_interopDefaultLegacy(require$$0$3);
+var require$$0__default$1 = /*#__PURE__*/_interopDefaultLegacy(require$$0$2);
+var zlib__default = /*#__PURE__*/_interopDefaultLegacy(zlib);
+var EventEmitter__default = /*#__PURE__*/_interopDefaultLegacy(EventEmitter);
 
 /******************************************************************************
 Copyright (c) Microsoft Corporation.
@@ -815,8 +834,8 @@ function getDefaultExportFromCjs (x) {
 	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
 }
 
-var Stream$2 = stream.Stream;
-var util$2 = require$$1;
+var Stream$2 = stream__default["default"].Stream;
+var util$2 = require$$1__default["default"];
 var delayed_stream = DelayedStream$1;
 function DelayedStream$1() {
   this.source = null;
@@ -900,8 +919,8 @@ DelayedStream$1.prototype._checkIfMaxDataSizeExceeded = function () {
   this.emit('error', new Error(message));
 };
 
-var util$1 = require$$1;
-var Stream$1 = stream.Stream;
+var util$1 = require$$1__default["default"];
+var Stream$1 = stream__default["default"].Stream;
 var DelayedStream = delayed_stream;
 var combined_stream = CombinedStream$1;
 function CombinedStream$1() {
@@ -11798,7 +11817,7 @@ var mimeDb = require$$0;
 	 * @private
 	 */
 	var db = mimeDb;
-	var extname = require$$1$1.extname;
+	var extname = require$$1__default$1["default"].extname;
 
 	/**
 	 * Module variables.
@@ -12288,13 +12307,13 @@ var populate$1 = function (dst, src) {
 };
 
 var CombinedStream = combined_stream;
-var util = require$$1;
-var path = require$$1$1;
-var http$1 = require$$3;
-var https$1 = require$$4;
-var parseUrl$2 = require$$0$1.parse;
-var fs = require$$6;
-var Stream = stream.Stream;
+var util = require$$1__default["default"];
+var path = require$$1__default$1["default"];
+var http$1 = require$$3__default["default"];
+var https$1 = require$$4__default["default"];
+var parseUrl$2 = require$$0__default["default"].parse;
+var fs = require$$6__default["default"];
+var Stream = stream__default["default"].Stream;
 var mime = mimeTypes;
 var asynckit = asynckit$1;
 var populate = populate$1;
@@ -13071,7 +13090,7 @@ var transitionalDefaults = {
   clarifyTimeoutError: false
 };
 
-var URLSearchParams = require$$0$1.URLSearchParams;
+var URLSearchParams = require$$0__default["default"].URLSearchParams;
 
 var platform$1 = {
   isNode: true,
@@ -13702,7 +13721,7 @@ function buildFullPath(baseURL, requestedURL) {
   return requestedURL;
 }
 
-var parseUrl$1 = require$$0$1.parse;
+var parseUrl$1 = require$$0__default["default"].parse;
 var DEFAULT_PORTS = {
   ftp: 21,
   gopher: 70,
@@ -14439,7 +14458,7 @@ function requireSupportsColor () {
 	if (hasRequiredSupportsColor) return supportsColor_1;
 	hasRequiredSupportsColor = 1;
 
-	const os = require$$0$2;
+	const os = require$$0__default$1["default"];
 	const hasFlag = requireHasFlag();
 	const env = process.env;
 	let forceColor;
@@ -14548,8 +14567,8 @@ function requireNode () {
 	if (hasRequiredNode) return node.exports;
 	hasRequiredNode = 1;
 	(function (module, exports) {
-		const tty = require$$0$3;
-		const util = require$$1;
+		const tty = require$$0__default$2["default"];
+		const util = require$$1__default["default"];
 
 		/**
 		 * This is the Node.js implementation of `debug()`.
@@ -14751,12 +14770,12 @@ var debug_1 = function () {
   debug$1.apply(null, arguments);
 };
 
-var url = require$$0$1;
+var url = require$$0__default["default"];
 var URL$1 = url.URL;
-var http = require$$3;
-var https = require$$4;
-var Writable = stream.Writable;
-var assert = require$$4$1;
+var http = require$$3__default["default"];
+var https = require$$4__default["default"];
+var Writable = stream__default["default"].Writable;
+var assert = require$$4__default$1["default"];
 var debug = debug_1;
 
 // Whether to use the native URL object or the legacy url module
@@ -15506,7 +15525,7 @@ function speedometer(samplesCount, min) {
 }
 
 const kInternals = Symbol('internals');
-class AxiosTransformStream extends stream.Transform {
+class AxiosTransformStream extends stream__default["default"].Transform {
   constructor(options) {
     options = utils$1.toFlatObject(options, {
       maxRate: 0,
@@ -15671,7 +15690,7 @@ const readBlob = async function* (blob) {
 var readBlob$1 = readBlob;
 
 const BOUNDARY_ALPHABET = utils$1.ALPHABET.ALPHA_DIGIT + '-_';
-const textEncoder = new TextEncoder();
+const textEncoder = new require$$1.TextEncoder();
 const CRLF = '\r\n';
 const CRLF_BYTES = textEncoder.encode(CRLF);
 const CRLF_BYTES_COUNT = 2;
@@ -15742,7 +15761,7 @@ const formDataToStream = (form, headersHandler, options) => {
     computedHeaders['Content-Length'] = contentLength;
   }
   headersHandler && headersHandler(computedHeaders);
-  return Readable.from(async function* () {
+  return stream.Readable.from(async function* () {
     for (const part of parts) {
       yield boundaryBytes;
       yield* part.encode();
@@ -15752,7 +15771,7 @@ const formDataToStream = (form, headersHandler, options) => {
 };
 var formDataToStream$1 = formDataToStream;
 
-class ZlibHeaderTransformStream extends stream.Transform {
+class ZlibHeaderTransformStream extends stream__default["default"].Transform {
   __transform(chunk, encoding, callback) {
     this.push(chunk);
     callback();
@@ -15790,14 +15809,14 @@ const callbackify = (fn, reducer) => {
 var callbackify$1 = callbackify;
 
 const zlibOptions = {
-  flush: zlib.constants.Z_SYNC_FLUSH,
-  finishFlush: zlib.constants.Z_SYNC_FLUSH
+  flush: zlib__default["default"].constants.Z_SYNC_FLUSH,
+  finishFlush: zlib__default["default"].constants.Z_SYNC_FLUSH
 };
 const brotliOptions = {
-  flush: zlib.constants.BROTLI_OPERATION_FLUSH,
-  finishFlush: zlib.constants.BROTLI_OPERATION_FLUSH
+  flush: zlib__default["default"].constants.BROTLI_OPERATION_FLUSH,
+  finishFlush: zlib__default["default"].constants.BROTLI_OPERATION_FLUSH
 };
-const isBrotliSupported = utils$1.isFunction(zlib.createBrotliDecompress);
+const isBrotliSupported = utils$1.isFunction(zlib__default["default"].createBrotliDecompress);
 const {
   http: httpFollow,
   https: httpsFollow
@@ -15943,7 +15962,7 @@ var httpAdapter = isHttpAdapterSupported && function httpAdapter(config) {
     }
 
     // temporary internal emitter until the AxiosRequest class will be implemented
-    const emitter = new EventEmitter();
+    const emitter = new EventEmitter__default["default"]();
     const onFinished = () => {
       if (config.cancelToken) {
         config.cancelToken.unsubscribe(abort);
@@ -15998,7 +16017,7 @@ var httpAdapter = isHttpAdapterSupported && function httpAdapter(config) {
           convertedData = utils$1.stripBOM(convertedData);
         }
       } else if (responseType === 'stream') {
-        convertedData = stream.Readable.from(convertedData);
+        convertedData = stream__default["default"].Readable.from(convertedData);
       }
       return settle(resolve, reject, {
         data: convertedData,
@@ -16038,7 +16057,7 @@ var httpAdapter = isHttpAdapterSupported && function httpAdapter(config) {
       headers.set(data.getHeaders());
       if (!headers.hasContentLength()) {
         try {
-          const knownLength = await require$$1.promisify(data.getLength).call(data);
+          const knownLength = await require$$1__default["default"].promisify(data.getLength).call(data);
           Number.isFinite(knownLength) && knownLength >= 0 && headers.setContentLength(knownLength);
           /*eslint no-empty:0*/
         } catch (e) {}
@@ -16046,7 +16065,7 @@ var httpAdapter = isHttpAdapterSupported && function httpAdapter(config) {
     } else if (utils$1.isBlob(data)) {
       data.size && headers.setContentType(data.type || 'application/octet-stream');
       headers.setContentLength(data.size || 0);
-      data = stream.Readable.from(readBlob$1(data));
+      data = stream__default["default"].Readable.from(readBlob$1(data));
     } else if (data && !utils$1.isStream(data)) {
       if (Buffer.isBuffer(data)) ; else if (utils$1.isArrayBuffer(data)) {
         data = Buffer.from(new Uint8Array(data));
@@ -16071,11 +16090,11 @@ var httpAdapter = isHttpAdapterSupported && function httpAdapter(config) {
     }
     if (data && (onUploadProgress || maxUploadRate)) {
       if (!utils$1.isStream(data)) {
-        data = stream.Readable.from(data, {
+        data = stream__default["default"].Readable.from(data, {
           objectMode: false
         });
       }
-      data = stream.pipeline([data, new AxiosTransformStream$1({
+      data = stream__default["default"].pipeline([data, new AxiosTransformStream$1({
         length: contentLength,
         maxRate: utils$1.toFiniteNumber(maxUploadRate)
       })], utils$1.noop);
@@ -16140,7 +16159,7 @@ var httpAdapter = isHttpAdapterSupported && function httpAdapter(config) {
     if (config.transport) {
       transport = config.transport;
     } else if (config.maxRedirects === 0) {
-      transport = isHttpsRequest ? require$$4 : require$$3;
+      transport = isHttpsRequest ? require$$4__default["default"] : require$$3__default["default"];
     } else {
       if (config.maxRedirects) {
         options.maxRedirects = config.maxRedirects;
@@ -16198,7 +16217,7 @@ var httpAdapter = isHttpAdapterSupported && function httpAdapter(config) {
           case 'compress':
           case 'x-compress':
             // add the unzipper to the body stream processing pipeline
-            streams.push(zlib.createUnzip(zlibOptions));
+            streams.push(zlib__default["default"].createUnzip(zlibOptions));
 
             // remove the content-encoding in order to not confuse downstream operations
             delete res.headers['content-encoding'];
@@ -16207,20 +16226,20 @@ var httpAdapter = isHttpAdapterSupported && function httpAdapter(config) {
             streams.push(new ZlibHeaderTransformStream$1());
 
             // add the unzipper to the body stream processing pipeline
-            streams.push(zlib.createUnzip(zlibOptions));
+            streams.push(zlib__default["default"].createUnzip(zlibOptions));
 
             // remove the content-encoding in order to not confuse downstream operations
             delete res.headers['content-encoding'];
             break;
           case 'br':
             if (isBrotliSupported) {
-              streams.push(zlib.createBrotliDecompress(brotliOptions));
+              streams.push(zlib__default["default"].createBrotliDecompress(brotliOptions));
               delete res.headers['content-encoding'];
             }
         }
       }
-      responseStream = streams.length > 1 ? stream.pipeline(streams, utils$1.noop) : streams[0];
-      const offListeners = stream.finished(responseStream, () => {
+      responseStream = streams.length > 1 ? stream__default["default"].pipeline(streams, utils$1.noop) : streams[0];
+      const offListeners = stream__default["default"].finished(responseStream, () => {
         offListeners();
         onFinished();
       });
@@ -17497,4 +17516,4 @@ class LibreTranslate {
 _LibreTranslate_apiKey = new WeakMap(), _LibreTranslate_apiEndpoint = new WeakMap(), _LibreTranslate_axiosInstance = new WeakMap();
 const libreTranslate = new LibreTranslate();
 
-export { libreTranslate };
+exports.libreTranslate = libreTranslate;

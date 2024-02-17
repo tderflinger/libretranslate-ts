@@ -1,11 +1,23 @@
-import axios, { AxiosInstance, AxiosResponse } from 'axios';
+import axios, { AxiosInstance, AxiosResponse } from "axios";
 
-//const LIBRETRANSLATE_ENDPOINT = "http://localhost:5000";
-
-interface Language {
+type Language = {
   code: string;
   name: string;
+  targets: string[];
 }
+
+type DetectResponse = {
+  status: number;
+  language: string;
+  confidence: number;
+  error?: string;
+};
+
+type TranslateResponse = {
+  status: number;
+  translatedText: string;
+  error?: string;
+};
 
 class LibreTranslate {
   #apiKey: string | null = null;
@@ -14,7 +26,6 @@ class LibreTranslate {
 
   constructor() {
     this.#axiosInstance = axios.create({
-      // baseURL: LIBRETRANSLATE_ENDPOINT,
       headers: {
         Accept: "application/json",
       },
@@ -31,27 +42,49 @@ class LibreTranslate {
   }
 
   async listLanguages(): Promise<Language[]> {
-    const result: AxiosResponse<Language[]> = await this.#axiosInstance.get('/languages');
+    const result: AxiosResponse<Language[]> = await this.#axiosInstance.get(
+      "/languages"
+    );
     return result.data;
   }
 
-  async detect(text: string) {
-    const result = await axios({
-      method: "post",
-      url: `${this.#apiEndpoint}/detect`,
-      data: {
-        q: text,
-        format: "text",
-        api_key: this.#apiKey,
-      },
-      headers: {
-        Accept: "application/json",
-      },
-    });
-    console.log(result?.data);
+  async detect(text: string): Promise<DetectResponse> {
+    try {
+      const result = await axios({
+        method: "post",
+        url: `${this.#apiEndpoint}/detect`,
+        data: {
+          q: text,
+          format: "text",
+          api_key: this.#apiKey,
+        },
+        headers: {
+          Accept: "application/json",
+        },
+      });
+      const response: DetectResponse = {
+        status: result?.status,
+        language: result?.data[0]?.language,
+        confidence: result?.data[0]?.confidence,
+        error: result?.data?.error,
+      };
+      return response;
+    } catch (error: any) {
+      const response: DetectResponse = {
+        status: 500,
+        language: "",
+        confidence: 0,
+        error: error.response?.data?.error || error?.message,
+      };
+      return response;
+    }
   }
 
-  async translate(text: string, sourceLang: string, targetLang: string) {
+  async translate(
+    text: string,
+    sourceLang: string,
+    targetLang: string
+  ): Promise<TranslateResponse> {
     try {
       const result = await axios({
         method: "post",
@@ -67,24 +100,21 @@ class LibreTranslate {
           Accept: "application/json",
         },
       });
-
-      console.log(result?.status);
-      result?.status > 300
-        ? console.error(result?.data?.error)
-        : console.log(result?.data?.translatedText);
+      const response: TranslateResponse = {
+        status: result?.status,
+        translatedText: result?.data?.translatedText,
+        error: result.data?.error,
+      };
+      return response;
     } catch (error: any) {
-      if (axios.isAxiosError(error)) {
-        console.error("Error: ", JSON.stringify(error));
-      } else {
-        console.error("Error: ", JSON.stringify(error));
-      }
+      const response: TranslateResponse = {
+        status: 500,
+        translatedText: "",
+        error: error.response?.data?.error || error?.message,
+      };
+      return response;
     }
   }
 }
 
 export const libreTranslate = new LibreTranslate();
-
-// libreTranslate.setApiEndpoint(LIBRETRANSLATE_ENDPOINT);
-// libreTranslate.translate("There is a tiger.", "en", "de");
-// libreTranslate.detect("Dies ist ein Tiger.");
-// libreTranslate.listLanguages();

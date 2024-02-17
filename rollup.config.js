@@ -6,9 +6,15 @@ import json from "@rollup/plugin-json";
 
 export default {
   input: "src/index.ts",
-  output: {
-    file: "dist/bundle.js",
-    format: "es",
-  },
-  plugins: [typescript(), babel(), resolve(), commonjs(), json()]
+  output: [
+    {
+      file: "dist/bundle.js",
+      format: "es",
+    },
+    {
+      file: "dist/bundle.cjs.js",
+      format: "cjs",
+    },
+  ],
+  plugins: [typescript(), babel(), resolve(), commonjs(), json()],
 };
