@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "ES2015",
+    "lib": ["dom", "ES2015"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "incremental": true,
+    "outDir": "dist",
+    "declaration": true,
+    "declarationDir": "dist/types",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app.ts", "src/app.ts"],
+  "exclude": ["node_modules"]
+}
