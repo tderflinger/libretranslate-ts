@@ -1,4 +1,5 @@
 # libretranslate-ts
+![logo](./doc/logo.svg)
 
 A simple and easy to use TypeScript library for [LibreTranslate](https://libretranslate.com/).
 Can also be used with JavaScript.
