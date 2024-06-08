@@ -1,4 +1,7 @@
 <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+    <!-- White background -->
+  <rect width="100" height="100" fill="white"/>
+
   <!-- Draw the globe -->
   <circle cx="40" cy="40" r="30" stroke="black" stroke-width="1" fill="none"/>
   
