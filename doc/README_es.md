@@ -1,7 +1,7 @@
 ![logo](./logo.svg)
 # libretranslate-ts
 
-[[Inglés]](../README.md)
+[[Inglés]](../README.md)  [[Rumano]](./README_ro.md)
 
 Una biblioteca sencilla y fácil de usar para [LibreTranslate](https://libretranslate.com/).
 También se puede utilizar con JavaScript.
@@ -24,27 +24,27 @@ Cuando tu instancia es diferente, necesitas cambiar esto.
 
 app.mjs
 ```typescript
-importa { libreTranslate } de "libretranslate-ts";
+import { libreTranslate } from "libretranslate-ts";
 
 const LIBRETRANSLATE_ENDPOINT = "http://localhost:5000";
 
 libreTranslate.setApiEndpoint(LIBRETRANSLATE_ENDPOINT);
-libreTranslate.setApiKey("));
-const result Detectar = esperar libreTranslate.detect("Hola, cómo estás?");
-console.log("Idioma detectada: ", resultDetect);
+libreTranslate.setApiKey("");
+const resultDetect = await libreTranslate.detect("Hola, cómo estás?");
+console.log("Detected language: ", resultDetect);
 const result = await libreTranslate.translate(
-"Hay un tigre en la casa cerca del granero.",
-"en",
-"es"
+    "There is a tiger in the house nearby the barn.",
+    "en",
+    "es"
 );
 
-si (resultado?.status √= 400) {
-consola.log("Status: ", result?.status);
-consola.error("Error: ", result?.error);
-process.exit(1);
+if (result?.status >= 400) {
+    console.log("Status: ", result?.status);
+    console.error("Error: ", result?.error);
+    process.exit(1);
 }
 
-consola.log(resultar?.translatedText);
+console.log(result?.translatedText);
 ```
 
 ## Bugs
