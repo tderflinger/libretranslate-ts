@@ -1,6 +1,6 @@
 {
   "name": "libretranslate-ts",
-  "version": "0.5.11",
+  "version": "0.5.12",
   "description": "TypeScript (and JavaScript) SDK for the LibreTranslate API.",
   "main": "dist/bundle.cjs.js",
   "module": "dist/bundle.js",
