@@ -1,7 +1,7 @@
 ![logo](./logo.svg)
 # libretranslate-ts
 
-[[Español]](./doc/README_es.md)  [[English]](../README.md) 
+[[Español]](./README_es.md)  [[English]](../README.md) 
 
 O bibliotecă TypeScript simplă și ușor de utilizat pentru [LibreTranslate](https://libretranslate.com/).
 Poate fi folosit şi cu JavaScript.
