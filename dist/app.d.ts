@@ -13,6 +13,7 @@ type TranslateResponse = {
     status: number;
     translatedText: string;
     error?: string;
+    alternatives?: string[];
 };
 declare class LibreTranslate {
     #private;
@@ -21,7 +22,7 @@ declare class LibreTranslate {
     setApiEndpoint(endpoint: string): void;
     listLanguages(): Promise<Language[]>;
     detect(text: string): Promise<DetectResponse>;
-    translate(text: string, sourceLang: string, targetLang: string): Promise<TranslateResponse>;
+    translate(text: string, sourceLang: string, targetLang: string, alternatives?: number): Promise<TranslateResponse>;
 }
 export declare const libreTranslate: LibreTranslate;
 export {};

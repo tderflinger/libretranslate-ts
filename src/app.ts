@@ -17,6 +17,7 @@ type TranslateResponse = {
   status: number;
   translatedText: string;
   error?: string;
+  alternatives?: string[];
 };
 
 class LibreTranslate {
@@ -83,7 +84,8 @@ class LibreTranslate {
   async translate(
     text: string,
     sourceLang: string,
-    targetLang: string
+    targetLang: string,
+    alternatives?: number,
   ): Promise<TranslateResponse> {
     try {
       const result = await axios({
@@ -95,6 +97,7 @@ class LibreTranslate {
           target: targetLang,
           format: "text",
           api_key: this.#apiKey,
+          alternatives: alternatives ? alternatives : undefined,
         },
         headers: {
           Accept: "application/json",
@@ -103,6 +106,7 @@ class LibreTranslate {
       const response: TranslateResponse = {
         status: result?.status,
         translatedText: result?.data?.translatedText,
+        alternatives: result?.data?.alternatives,
         error: result.data?.error,
       };
       return response;
