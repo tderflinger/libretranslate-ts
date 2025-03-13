@@ -1,6 +1,8 @@
 ![logo](./doc/logo.svg)
 # libretranslate-ts
 
+[[Español]](./doc/README_es.md)
+
 A simple and easy to use TypeScript library for [LibreTranslate](https://libretranslate.com/).
 Can also be used with JavaScript.
 
